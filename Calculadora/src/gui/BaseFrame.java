@@ -8,11 +8,13 @@ public class BaseFrame extends JFrame {
 		this.setSize(800,600);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
+		this.setLocationRelativeTo(null);
 	}
 	
 	public BaseFrame(String title) {
 		this.setSize(800,600);
 		this.setTitle(title);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
 	}
 }

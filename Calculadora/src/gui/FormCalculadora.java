@@ -1,50 +1,47 @@
 package gui;
 
-import java.awt.FlowLayout;
-import java.util.Iterator;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class FormCalculadora extends BaseFrame {
 	
+	private float memoria = 0;
+	private String operacao = "";
+	private String operador = "";
+	
+	
+	
 	public FormCalculadora() {
+		// invoca o método construtor da classe base
 		super("Calculadora");
+		
 		// informa o painel
 		JPanel panel = (JPanel)this.getContentPane();
 		
-		// instancia uma caixa de texto
-		JTextField text1 = new JTextField("text1");
-		JTextField text2 = new JTextField("text2");
-		JTextField text3 = new JTextField("text3");
+		// define os botoes
+		String buttons[] = {"7","8","9","+","4","5","6","-","1","2","3","*","0","CE",",","/","="};
 		
-		// dimensiona as caixas de texto
-		text1.setSize(150, 30);
-		text2.setSize(150, 30);
-		text3.setSize(150, 30);		
 		
-		/*
-		// exclui o layout padrao
-		panel.setLayout(null);
-		// define o tamanho da caixa de texto
-		text.setBounds(10,10, 200, 30);
-		*/
-		
-		// definindo o layout do painel
-		panel.setLayout(new FlowLayout());
-		
-		// inclui os text's no painel
-		panel.add(text3);
-		panel.add(text1);
-		panel.add(text2);
-		
-		JTextField x;
-		for (int i=0; i<100; i++) {
-			x = new JTextField("Texto " + i);
-			x.setSize(300, 30);
-			panel.add(x);
+		JTextField text = new JTextField();
+		text.setEnabled(false);
+		panel.add(text, BorderLayout.NORTH);
+
+		JPanel panelButtons = new JPanel(new GridLayout(0, 4));
+		JButton btn;
+		for (String botao : buttons) {
+			btn = new JButton(botao);
+			panelButtons.add(btn);	
 		}
 		
+		panel.add(panelButtons, BorderLayout.CENTER);
+		
+		this.pack();
 		this.setVisible(true);
 		
 	}
