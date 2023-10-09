@@ -15,6 +15,9 @@ public class FormCalculadora extends BaseFrame {
 	private String operacao = "";
 	private String operador = "";
 	
+	JTextField text; 
+	JButton btn;
+	JPanel panel, panelButtons;
 	
 	
 	public FormCalculadora() {
@@ -22,18 +25,17 @@ public class FormCalculadora extends BaseFrame {
 		super("Calculadora");
 		
 		// informa o painel
-		JPanel panel = (JPanel)this.getContentPane();
+		panel = (JPanel)this.getContentPane();
 		
 		// define os botoes
 		String buttons[] = {"7","8","9","+","4","5","6","-","1","2","3","*","0","CE",",","/","="};
 		
 		
-		JTextField text = new JTextField();
+		text = new JTextField();
 		text.setEnabled(false);
 		panel.add(text, BorderLayout.NORTH);
 
-		JPanel panelButtons = new JPanel(new GridLayout(0, 4));
-		JButton btn;
+		panelButtons = new JPanel(new GridLayout(0, 4));
 		for (String botao : buttons) {
 			btn = new JButton(botao);
 			panelButtons.add(btn);	
