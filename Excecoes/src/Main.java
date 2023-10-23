@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 
 public class Main {
@@ -13,6 +15,22 @@ public class Main {
 			System.out.print(e.getMessage());
 		}
 		*/
+		
+		int dividendo, divisor, resultado;
+		Scanner s = new Scanner(System.in);
+		try {
+			System.out.print("informe o didivendo ");
+			dividendo = s.nextInt();
+			System.out.print("informe o divisor ");
+			divisor = s.nextInt();
+			resultado = dividendo / divisor;
+			System.out.println(resultado);	
+			throw new Exception("");
+		} catch (Exception e) {
+			System.out.print(e.getClass());
+		} finally {
+			s.close();
+		}
 		
 		
 		try {
