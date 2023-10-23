@@ -10,9 +10,18 @@ public class Main extends Thread {
     Main thread1 = new Main("Thread 1");
     Main thread2 = new Main("Thread 2");
     
+    //thread1.execute();
+    //thread2.execute();
+    
     thread1.start();
     thread2.start();
     System.out.println("Código rodando fora da thread");
+  }
+  
+  public void execute() {
+	  for(int i = 1; i<10; i++) {
+  		System.out.println(this.nome + " - " + i);  
+	  }
   }
   
   public void run() {		  
@@ -28,4 +37,5 @@ public class Main extends Thread {
 	  		System.out.println(this.nome + " - " + i);  
 	  }
   }
+
 }
